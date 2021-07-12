@@ -48,7 +48,6 @@ namespace Vape_v4._05
                 try
                 {
                     ExecuteAsAdmin(@"bin\Tools\vape v4.exe");
-                    ExecuteAsAdmin(@"");
                     Console.WriteLine("Succesfully import Injector");
                     Console.WriteLine("Succesfully import Kernel");
                     Console.WriteLine("Succesfully import AppData");
